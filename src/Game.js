@@ -102,7 +102,7 @@ const Game = () => {
                     const key = getKeyFromIndex(index);
 
                     return (
-                        <button
+                        <button className="buttonGame"
                             key={index}
                             type="button"
                             onClick={() =>
