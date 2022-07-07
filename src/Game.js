@@ -117,7 +117,7 @@ const Game = () => {
             {(winner || isATie) && (
                 <div className="Game__menu">
                     {winner ?
-                        (<p>O ganhador é: {winner > 0 ? 'O' : 'x'}</p>) :
+                        (<p>O ganhador é: {winner > 0 ? 'X' : 'O'}</p>) :
                         (<p>Deu velha!</p>)}                    
                     <button onClick={reset}>Reiniciar</button>
                 </div>)}
