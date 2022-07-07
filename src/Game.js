@@ -23,12 +23,17 @@ const getLabel = (value) => {
     return value > 0 ? 'X' : 'O';
 }
 
+function getWinner(values) {
+
+}
+
 const Game = () => {
     const [values, setValues] = useState(getInitialState);
     const [player, setPlayer] = useState(1);
+    const [winner, setWinner] = useState(null);
 
     function handleClick(key) {
-        if (values[key]) {
+        if (winner || values[key]) {
             return;
         }
         setValues({
@@ -37,6 +42,11 @@ const Game = () => {
         });
 
         setPlayer(player * -1);
+        const newWinner = getWinner(values);
+
+        if (newWinner) {
+            setWinner()
+        }
     }
 
     return (
@@ -58,6 +68,12 @@ const Game = () => {
                         </button>
                     )
                 })}
+            </div>
+            <div className="Game__menu">
+                <p>O ganhador é: {winner > 0 ? 'O' : 'x'}</p>
+
+                {/* Vídeo em 23:54 */}
+
             </div>
         </div>
 
